@@ -7,19 +7,16 @@
 </head>
 <body>
     <script>
-        //请用户输入一条信息
-        var input=prompt("请输入消息内容");
-        //查找信息中心是否包含敏感词"我草"
-        var i=input.match(/([我卧]|wo)([草艹槽]|cao)/i);
-        
-        if(i!=null){
-            //如果存在,提示信息中心包含敏感词
-            document.write(`<h3 style="color:red">您输入的内容位置${i["index"]}包含敏感词${i[0]},禁止发送!</h3>`)
-        }else{
-            //否则,没有找到
-            document.write(`<h3>然哥说:${input}</h3>`)
-        }
-        
+    var input=prompt("请输入消息内容");
+   var arr=["白日","晴天"]
+   var str=arr.join("|")
+   console.log(str)
+	var i=input.search(new RegExp(str));	
+		if(i!=-1){
+			document.write(`<h3 style="color:red">包含敏感词,禁止发送</h3>`);
+		}else{
+			document.write(`<h3 style="color:green">然哥说：${input}</h3>`)
+		}
     </script>
 </body>
 </html>

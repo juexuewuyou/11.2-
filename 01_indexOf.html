@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //请用户输入一条信息
+        var input=prompt("请输入消息内容");
+        //查找信息中心是否包含敏感词"我草"
+        var i=input.search(/([我卧]|wo)([草艹槽]|cao)/i);
+        
+        if(i!=-1){
+            //如果存在,提示信息中心包含敏感词
+            document.write(`<h3 style="color:red">您输入的内容包含敏感词</h3>`)
+        }else{
+            //否则,没有找到
+            document.write(`<h3>然哥说:${input}</h3>`)
+        }
+        
+    </script>
+</body>
+</html>
